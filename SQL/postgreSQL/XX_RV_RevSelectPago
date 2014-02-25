@@ -1,0 +1,11 @@
+﻿--DROP VIEW XX_RV_RevSelectPago
+CREATE OR REPLACE VIEW XX_RV_RevSelectPago AS
+  SELECT rsp.AD_Client_ID, rsp.AD_Org_ID, rsp.C_BPartner_ID, 
+  rsp.C_BP_BankAccount_ID,rsp.C_Payment_ID, rsp.C_PaySelectionCheck_ID, 
+  rsp.C_PaySelection_ID, rsp.Created, rsp.CreatedBy, rsp.DiscountAmt, 
+  rsp.DocumentNo, rsp.IsActive, rsp.IsGeneratedDraft, rsp.IsPrinted,
+  rsp.IsReceipt, rsp.PaymentRule, rsp.Processed, rsp.Qty, 
+  rsp.Updated, rsp.UpdatedBy,
+  CASE WHEN pa.DocStatus <> 'CO' THEN 0 ELSE rsp.PayAmt END PayAmt
+  FROM C_PaySelectionCheck rsp 
+  INNER JOIN C_Payment pa ON(pa.C_Payment_ID = rsp.C_Payment_ID)

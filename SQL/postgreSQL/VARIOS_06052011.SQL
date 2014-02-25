@@ -1,0 +1,1 @@
+﻿UPDATE C_CashLine SET /*DocStatus = 'DR', DocAction = 'CO', Processing = 'N', Posted = 'N', */Processed = 'Y' WHERE C_Cash_ID = 1000075;

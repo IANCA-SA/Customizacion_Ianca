@@ -1,0 +1,16 @@
+﻿UPDATE C_Invoice fac
+        SET XX_Nro_Comprobante = to_char(current_date, 'YYYYMM') || XX_Fn_Actualiza_Sec(1000242) 
+      WHERE XX_Nro_Comprobante IS NOT NULL 
+        AND XXProcesado = 'N'  
+        AND Date(fac.DateAcct) BETWEEN Date(current_timestamp) And Date(current_timestamp)
+        AND 1000012 IN (SELECT C_Charge_ID FROM C_InvoiceLine lfac WHERE lfac.C_Invoice_ID = fac.C_Invoice_ID);
+
+SELECT to_char(current_date, 'DD-MM-YYYY') || XX_Fn_Actualiza_Sec(1000242)
+
+	update c_invoice set XX_Nro_Comprobante = null
+
+SELECT * FROM C_Invoice i
+  WHERE i.XX_Nro_Comprobante IS NOT NULL 
+        AND i.XXProcesado = 'N' 
+        AND Date(current_timestamp) BETWEEN Date(current_timestamp) And Date(current_timestamp)
+        AND 1000012 IN (SELECT C_Charge_ID FROM C_InvoiceLine lfac WHERE lfac.C_Invoice_ID = i.C_Invoice_ID);

@@ -1,0 +1,23 @@
+﻿SELECT ifa.C_Tax_ID, ifa.C_Invoice_ID, i.name FROM C_InvoiceTax ifa inner join C_Tax i ON(i.C_Tax_ID = ifa.C_Tax_ID)
+
+
+
+SELECT * FROM C_Tax WHERE C_Tax_ID = 1000452
+
+SELECT * FROM C_InvoiceTax_Back
+
+SELECT * FROM C_OrderTax_Back
+
+CREATE TABLE C_InvoiceTax_Back AS Select * from C_InvoiceTax
+
+CREATE TABLE C_OrderTax_Back AS Select * from C_OrderTax
+
+
+DELETE FROM C_InvoiceTax WHERE C_Tax_ID = 1000452
+
+
+SELECT * FROM C_Payment
+
+UPDATE C_Payment SET AD_Org_ID = 1000002
+
+SELECT * FROM AD_Org

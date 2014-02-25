@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="src/" kind="src" path="base"/>
+	<classpathentry kind="src" path="SQL"/>
+	<classpathentry kind="src" path="client"/>
+	<classpathentry kind="src" path="pruebas"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/adempiere360lts"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

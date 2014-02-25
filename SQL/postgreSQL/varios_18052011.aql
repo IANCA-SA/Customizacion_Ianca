@@ -1,0 +1,57 @@
+﻿/*Factura*/	
+UPDATE C_OrderLine SET C_Tax_ID = 1000467
+	WHERE C_OrderLine_ID IN (SELECT lfac.C_OrderLine_ID/*, lfac.C_Order_ID, lfac.C_Tax_ID ID_Imp_Fac , 
+	tx.Name IVA_Factura, txc.C_Tax_ID ID_Imp_Car, txc.Name IVA_Cargo, fac.DocStatus, cr.Name, lfac.C_Charge_ID*/
+	FROM C_Order fac
+	INNER JOIN C_OrderLine lfac ON(lfac.C_Order_ID = fac.C_Order_ID)
+	INNER JOIN C_Tax tx ON(tx.C_Tax_ID = lfac.C_Tax_ID)
+	INNER JOIN C_Charge cr ON(cr.C_Charge_ID = lfac.C_Charge_ID)
+	INNER JOIN C_tax txc ON(txc.C_TaxCategory_ID = cr.C_TaxCategory_ID)
+	WHERE lfac.C_Charge_ID IN(/*1000009, 1000121, 1000010, */1000012)
+	AND fac.DocStatus = 'CO'
+	AND lfac.C_Tax_ID <> txc.C_Tax_ID
+	AND lfac.C_Tax_ID <> 1000450)
+
+
+/*Impuesto Factura*/
+
+UPDATE C_OrderTax SET C_Tax_ID = 1000458
+WHERE C_Order_ID IN(SELECT ti.C_Order_ID/*, ti.C_Tax_ID ID_Lin_Imp, tlt.Name Imp_Lin_Imp, li.C_Tax_ID ID_LIn_Im_Fac, tli.Name Imp_Lin_Fac,
+ti.TaxBaseAmt , li.LineNetAmt NetoLinea, ti.TaxAmt*/
+FROM C_OrderTax ti
+INNER JOIN C_Order i ON(i.C_Order_ID = ti.C_Order_ID)
+INNER JOIN C_OrderLine li ON(li.C_Order_ID = i.C_Order_ID)
+INNER JOIN C_Tax tlt ON(tlt.C_Tax_ID = ti.C_Tax_ID)
+INNER JOIN C_Tax tli ON(tli.C_Tax_ID = li.C_Tax_ID)
+WHERE i.DocStatus = 'CO'
+AND ti.TaxBaseAmt = li.LineNetAmt
+AND tli.C_Tax_ID <> tlt.C_Tax_ID
+AND ti.C_Tax_ID <> 1000450
+AND li.C_Charge_ID IN(/*1000009, 1000121, 1000010, */1000012) Order By ti.C_Order_ID)
+AND C_Tax_ID = 1000465
+
+
+
+UPDATE C_InvoiceTax SET C_Tax_ID = 1000467
+WHERE C_Invoice_ID IN(SELECT ti.C_Invoice_ID, ti.C_Tax_ID ID_Lin_Imp, tlt.Name Imp_Lin_Imp, li.C_Tax_ID ID_LIn_Im_Fac, tli.Name Imp_Lin_Fac,
+ti.TaxBaseAmt , li.LineNetAmt NetoLinea, ti.TaxAmt, cr.Name
+FROM C_InvoiceTax ti
+INNER JOIN C_Invoice i ON(i.C_Invoice_ID = ti.C_Invoice_ID)
+INNER JOIN C_InvoiceLine li ON(li.C_Invoice_ID = i.C_Invoice_ID)
+INNER JOIN C_Tax tlt ON(tlt.C_Tax_ID = ti.C_Tax_ID)
+INNER JOIN C_Tax tli ON(tli.C_Tax_ID = li.C_Tax_ID)
+INNER JOIN C_Charge cr ON(cr.C_Charge_ID = li.C_Charge_ID)
+WHERE i.DocStatus = 'CO'
+AND ti.TaxBaseAmt = li.LineNetAmt
+AND tli.C_Tax_ID <> tlt.C_Tax_ID
+AND ti.C_Tax_ID <> 1000450
+AND li.C_Charge_ID IN(/*1000009, */1000121/*, 1000010, 1000012*/))
+AND C_Tax_ID = 1000465
+AMD i.C_Invoice_ID IN(1003322, 1000291)
+
+
+
+SELECT * FROM C_Invoice WHERE DocumentNo IN ('A-56538', 'A-56701')
+
+
+SELECT * FROM UPDATE C_InvoiceTax SET C_Tax_ID = 1000466 WHERE C_Invoice_ID IN(1003322, 1000291)
