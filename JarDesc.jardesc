@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <jardesc>
-    <jar path="Custom-INALSA/packages/Custom-INALSA/lib/Custom-INALSA.jar"/>
+    <jar path="Customizacion_Ianca/packages/Customizacion_Ianca/lib/Customizacion_Ianca.jar"/>
     <options buildIfNeeded="true" compress="true" descriptionLocation="/Customizacion_Ianca/JarDesc.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
     <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
     <selectedProjects/>
@@ -12,11 +12,22 @@
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
         <file path="/Customizacion_Ianca/Customizacion_Ianca.launch"/>
+        <javaElement handleIdentifier="=Customizacion_Ianca/base&lt;org.compiere.process"/>
+        <javaElement handleIdentifier="=Customizacion_Ianca/base&lt;org.compiere.model"/>
+        <javaElement handleIdentifier="=Customizacion_Ianca/base&lt;org.mary.process{Discount.java"/>
+        <file path="/Customizacion_Ianca/.classpath"/>
+        <javaElement handleIdentifier="=Customizacion_Ianca/base&lt;org.sg.procesos"/>
+        <javaElement handleIdentifier="=Customizacion_Ianca/pruebas"/>
+        <javaElement handleIdentifier="=Customizacion_Ianca/base&lt;org.compiere.acct"/>
+        <javaElement handleIdentifier="=Customizacion_Ianca/base&lt;org.compiere.util"/>
+        <javaElement handleIdentifier="=Customizacion_Ianca/base&lt;org.mary.process{XXCopyDiscountValues.java"/>
+        <javaElement handleIdentifier="=Customizacion_Ianca/base&lt;org.sg.modelos"/>
         <file path="/Customizacion_Ianca/JarDesc.jardesc"/>
         <file path="/Customizacion_Ianca/.project"/>
-        <file path="/Customizacion_Ianca/.classpath"/>
-        <javaElement handleIdentifier="=Customizacion_Ianca/pruebas"/>
-        <javaElement handleIdentifier="=Customizacion_Ianca/base"/>
+        <javaElement handleIdentifier="=Customizacion_Ianca/base&lt;org.mary.process{ChangeDocStatus.java"/>
+        <javaElement handleIdentifier="=Customizacion_Ianca/base&lt;org.mary.process{ChangeOrg.java"/>
+        <javaElement handleIdentifier="=Customizacion_Ianca/base&lt;org.sg.report"/>
         <javaElement handleIdentifier="=Customizacion_Ianca/client"/>
+        <javaElement handleIdentifier="=Customizacion_Ianca/base&lt;org.mary.process{Interest.java"/>
     </selectedElements>
 </jardesc>
