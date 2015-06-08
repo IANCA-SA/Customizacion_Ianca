@@ -4,7 +4,7 @@
 	<classpathentry kind="src" path="SQL"/>
 	<classpathentry kind="src" path="client"/>
 	<classpathentry kind="src" path="pruebas"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/adempiere360lts"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/adempiere360lts"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
