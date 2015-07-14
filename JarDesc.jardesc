@@ -12,8 +12,8 @@
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
         <file path="/Customizacion_Ianca/Customizacion_Ianca.launch"/>
-        <file path="/Customizacion_Ianca/JarDesc.jardesc"/>
         <file path="/Customizacion_Ianca/.project"/>
+        <file path="/Customizacion_Ianca/JarDesc.jardesc"/>
         <file path="/Customizacion_Ianca/.classpath"/>
         <javaElement handleIdentifier="=Customizacion_Ianca/pruebas"/>
         <javaElement handleIdentifier="=Customizacion_Ianca/base"/>
